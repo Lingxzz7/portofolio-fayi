@@ -2,42 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fayi Futuristic Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    
     body {
       margin: 0;
       font-family: 'Inter', Arial, Helvetica, sans-serif;
       background: #0f172a;
       color: #fff;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
-    
     h2, .projects h2, .contact h2 {
       text-align: center;
       font-family: 'Inter', Arial, Helvetica, sans-serif;
-      margin-bottom: 1.5rem;
     }
-    
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
     }
-    
     #bg-video {
       position: absolute;
       width: 100vw;
@@ -46,42 +35,34 @@
       z-index: 0;
       opacity: 0.3;
     }
-    
     .overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(to bottom, #000a, #0008 60%, #000e);
       z-index: 1;
     }
-    
     .particles {
       position: absolute;
       inset: 0;
       z-index: 2;
     }
-    
     .hero-content {
       position: relative;
       z-index: 3;
       text-align: center;
-      max-width: 90vw;
     }
-    
     .glitch {
-      font-size: clamp(2rem, 8vw, 4rem);
+      font-size: 4rem;
       font-weight: bold;
       background: linear-gradient(90deg, #06b6d4, #a21caf, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: glitch 1s infinite alternate;
-      line-height: 1.2;
     }
-    
     @keyframes glitch {
       0% { text-shadow: 2px 0 #0ff, -2px 0 #f0f, 0 2px #fff; }
       100% { text-shadow: -2px 0 #0ff, 2px 0 #f0f, 0 -2px #fff; }
     }
-    
     .cta-buttons {
       display: flex;
       gap: 1em;
@@ -89,7 +70,6 @@
       margin-top: 2em;
       flex-wrap: wrap;
     }
-    
     .neon {
       background: linear-gradient(90deg, #06b6d4, #a21caf);
       color: #fff;
@@ -100,18 +80,11 @@
       font-weight: bold;
       cursor: pointer;
       transition: transform 0.2s;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 1rem;
-      min-width: 140px;
-      text-align: center;
     }
-    
-    .neon:hover, .neon:active {
+    .neon:hover {
       transform: scale(1.05);
       box-shadow: 0 0 32px #06b6d4, 0 0 64px #a21caf;
     }
-    
     .outline {
       border: 2px solid #06b6d4;
       background: transparent;
@@ -121,18 +94,11 @@
       font-weight: bold;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 1rem;
-      min-width: 140px;
-      text-align: center;
     }
-    
-    .outline:hover, .outline:active {
+    .outline:hover {
       background: #06b6d4;
       color: #000;
     }
-    
     .scroll-indicator {
       position: absolute;
       bottom: 2em;
@@ -141,12 +107,10 @@
       z-index: 4;
       animation: bounce 1.5s infinite;
     }
-    
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(10px); }
     }
-    
     .glass {
       background: rgba(30, 41, 59, 0.7);
       border-radius: 2em;
@@ -156,28 +120,23 @@
       margin: 2em auto;
       padding: 2em;
     }
-    
     .about-content {
       display: flex;
       flex-wrap: wrap;
       gap: 2em;
       justify-content: space-between;
     }
-    
     .skills {
       min-width: 250px;
       flex: 1;
     }
-    
     .skills h3 {
       margin-bottom: 1em;
       color: #06b6d4;
     }
-    
     .skill {
       margin-bottom: 1em;
     }
-    
     .progress {
       background: #1e293b;
       border-radius: 999px;
@@ -185,14 +144,12 @@
       margin: 0.5em 0;
       overflow: hidden;
     }
-    
     .progress > div {
       background: linear-gradient(90deg, #06b6d4, #a21caf);
       height: 100%;
       border-radius: 999px;
       transition: width 1s;
     }
-    
     .github-stats {
       display: flex;
       gap: 2em;
@@ -202,21 +159,16 @@
       color: #a5f3fc;
       font-weight: bold;
     }
-    
     .projects {
       padding: 4em 0;
       background: #111827;
     }
-    
     .filters {
       display: flex;
       gap: 1em;
       justify-content: center;
       margin-bottom: 2em;
-      flex-wrap: wrap;
-      padding: 0 1rem;
     }
-    
     .filters button {
       background: #1e293b;
       color: #a5f3fc;
@@ -226,23 +178,17 @@
       font-weight: bold;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
-      font-size: 0.9rem;
-      min-width: 100px;
     }
-    
     .filters button.active, .filters button:hover {
       background: linear-gradient(90deg, #06b6d4, #a21caf);
       color: #fff;
     }
-    
     .project-list {
       display: flex;
       flex-wrap: wrap;
       gap: 2em;
       justify-content: center;
-      padding: 0 1rem;
     }
-    
     .project-card {
       background: rgba(30, 41, 59, 0.7);
       border-radius: 1.5em;
@@ -253,106 +199,62 @@
       max-width: 340px;
       flex: 1 1 300px;
       position: relative;
-      overflow: hidden;
     }
-    
     .project-card:hover {
-      transform: scale(1.02);
+      transform: scale(1.05) rotateY(4deg);
       box-shadow: 0 8px 32px #a21cafaa;
       border: 1px solid #a21caf;
       z-index: 2;
     }
-    
-    .project-card img,
-    .project-card video {
-      width: 100%;
-      border-radius: 1em;
-      margin-bottom: 1em;
-      object-fit: cover;
-      max-height: 200px;
-      display: block;
-    }
-    
-    .project-card h3 {
-      margin: 0 0 0.5em 0;
-      font-size: 1.5rem;
-      color: #fff;
-    }
-    
-    .project-card p {
-      margin: 0 0 1em 0;
-      color: #a5f3fc;
-      line-height: 1.5;
-    }
-    
     .project-card .tech {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5em;
       margin-bottom: 1em;
     }
-    
     .project-card .tech span {
       background: #06b6d4aa;
       color: #fff;
       border-radius: 999px;
       padding: 0.2em 0.8em;
-      font-size: 0.8rem;
+      font-size: 0.9em;
     }
-    
+    .project-card button, .project-card a {
+      margin-top: 1em;
+      display: inline-block;
+    }
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0,0,0,0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 100;
-      padding: 1rem;
     }
-    
     .lightbox.hidden { display: none; }
-    
-    .lightbox img { 
-      max-width: 90vw; 
-      max-height: 80vh; 
-      border-radius: 1em;
-      object-fit: contain;
-    }
-    
+    .lightbox img { max-width: 80vw; max-height: 80vh; border-radius: 1em; }
     .lightbox .close, .lightbox .prev, .lightbox .next {
       position: absolute;
       color: #fff;
       font-size: 2em;
       cursor: pointer;
       user-select: none;
-      background: rgba(0,0,0,0.5);
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    
     .lightbox .close { top: 2em; right: 2em; }
     .lightbox .prev { left: 2em; top: 50%; transform: translateY(-50%); }
     .lightbox .next { right: 2em; top: 50%; transform: translateY(-50%); }
-    
     .contact {
       padding: 4em 0;
       background: #111827;
     }
-    
     .contact form {
       display: flex;
       flex-direction: column;
       gap: 1em;
       max-width: 400px;
       margin: 0 auto;
-      padding: 0 1rem;
     }
-    
     .contact input, .contact textarea {
       background: #1e293b;
       border: 1px solid #06b6d4;
@@ -361,219 +263,54 @@
       padding: 1em;
       font-size: 1em;
       resize: none;
-      font-family: inherit;
     }
-    
-    .contact input:focus, .contact textarea:focus {
-      outline: none;
-      border-color: #a21caf;
-      box-shadow: 0 0 0 2px rgba(162, 28, 175, 0.2);
-    }
-    
     .contact button {
       margin-top: 1em;
     }
-    
     .contact #form-status {
       margin-top: 1em;
       color: #06b6d4;
       text-align: center;
     }
-    
     footer {
       background: #0f172a;
       padding: 2em 0 1em 0;
       text-align: center;
       color: #94a3b8;
     }
-    
     footer .socials a {
       margin: 0 0.5em;
       color: #06b6d4;
       font-size: 1.5em;
       transition: color 0.2s;
-      display: inline-block;
-      padding: 0.5em;
     }
-    
     footer .socials a:hover { color: #a21caf; }
-    
-    /* Mobile Responsive Design */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 0.5rem;
-      }
-      
-      .glitch {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-      }
-      
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-      
-      .neon, .outline {
-        width: 100%;
-        max-width: 250px;
-        padding: 0.8em 1.5em;
-        font-size: 0.9rem;
-      }
-      
-      .glass {
-        margin: 1em;
-        padding: 1.5em;
-        border-radius: 1.5em;
-      }
-      
-      .about-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5em;
-      }
-      
-      .skills {
-        min-width: auto;
-        width: 100%;
-      }
-      
-      .github-stats {
-        flex-direction: column;
-        gap: 1em;
-        text-align: center;
-      }
-      
-      .project-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5em;
-      }
-      
-      .project-card {
-        min-width: auto;
-        max-width: 100%;
-        width: 100%;
-        padding: 1.2em;
-      }
-      
-      .project-card img,
-      .project-card video {
-        max-height: 180px;
-      }
-      
-      .filters {
-        gap: 0.5em;
-      }
-      
-      .filters button {
-        padding: 0.4em 1em;
-        font-size: 0.8rem;
-        min-width: 80px;
-      }
-      
-      .contact form {
-        max-width: 100%;
-      }
-      
-      .lightbox .close, .lightbox .prev, .lightbox .next {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5em;
-      }
-      
-      .lightbox .close { top: 1em; right: 1em; }
-      .lightbox .prev { left: 1em; }
-      .lightbox .next { right: 1em; }
-    }
-    
-    @media (max-width: 480px) {
-      .hero {
-        min-height: 90vh;
-      }
-      
-      .glitch {
-        font-size: clamp(1.2rem, 5vw, 2rem);
-      }
-      
-      .glass {
-        margin: 0.5em;
-        padding: 1em;
-        border-radius: 1em;
-      }
-      
-      .project-card {
-        padding: 1em;
-      }
-      
-      .project-card h3 {
-        font-size: 1.3rem;
-      }
-      
-      .filters button {
-        padding: 0.3em 0.8em;
-        font-size: 0.75rem;
-        min-width: 70px;
-      }
-      
-      .contact input, .contact textarea {
-        padding: 0.8em;
-        font-size: 0.9em;
-      }
-    }
-    
-    /* Touch-friendly improvements */
-    @media (hover: none) and (pointer: coarse) {
-      .neon:hover, .outline:hover {
-        transform: none;
-      }
-      
-      .project-card:hover {
-        transform: none;
-      }
-      
-      .filters button:hover {
-        background: #1e293b;
-        color: #a5f3fc;
-      }
-      
-      .filters button.active {
-        background: linear-gradient(90deg, #06b6d4, #a21caf);
-        color: #fff;
-      }
-    }
-    
-    /* High DPI displays */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .project-card img,
-      .project-card video {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-      }
+    @media (max-width: 900px) {
+      .about-content { flex-direction: column; align-items: center; }
+      .project-list, .blog-list { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <video autoplay muted loop id="bg-video" playsinline>
+    <video autoplay muted loop id="bg-video">
       <source src="/portofolio-fayi/assets/background-Ca_f8KiA.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>
     <div class="particles"></div>
     <div class="hero-content">
       <h1 id="typed-text" class="glitch"></h1>
-      <p>Passionate Tech Enthusiast & Aspiring Developer</p>
+      <p>Student | Beginner Web Developer</p>
       <div class="cta-buttons">
-        <a href="#projects" class="neon">View My Work</a>
-        <a href="#contact" class="outline">Get In Touch</a>
+        <a href="#projects" class="neon" style="text-decoration:none;display:inline-block;">View My Work</a>
+        <a href="#contact" class="outline" style="text-decoration:none;display:inline-block;">Get In Touch</a>
       </div>
     </div>
     <div class="scroll-indicator">
       <i data-lucide="chevron-down"></i>
     </div>
   </section>
-  
   <!-- About Section -->
   <section id="about" class="about glass">
     <h2>About Me</h2>
@@ -594,7 +331,7 @@
         </div>
         <div class="skill">
           <span>Tailwind CSS</span>
-          <div class="progress"><div style="width:70%"></div></div>
+          <div class="progress"><div style="width:50%"></div></div>
         </div>
         <div class="skill">
           <span>Jaringan Komputer</span>
@@ -603,17 +340,16 @@
       </div>
     </div>
     <div class="github-stats">
-      <div>Repos: <span>12</span></div>
+      <div>Repos: <span>5</span></div>
       <div>Stars: <span>45</span></div>
-      <div>Commits: <span>234</span></div>
+      <div>Commits: <span>212</span></div>
       <div>PRs: <span>18</span></div>
-      <div>Top Languages: JS, HTML, CSS, Python</div>
+      <div>Top Languages: JavaScript, HTML, CSS, Tailwind CSS</div>
     </div>
   </section>
-  
   <!-- Projects Section -->
   <section id="projects" class="projects">
-    <h2>Featured Projects</h2>
+    <h2>My Projects</h2>
     <div class="filters">
       <button onclick="filterProjects('All')" class="active">All</button>
       <button onclick="filterProjects('Web Development')">Web Development</button>
@@ -627,40 +363,29 @@
       <span class="next" onclick="nextImage()">&#10095;</span>
     </div>
   </section>
-  
   <!-- Contact Section -->
   <section id="contact" class="contact glass">
     <h2>Get In Touch</h2>
     <form id="contact-form" onsubmit="return submitForm(event)">
       <input type="text" name="name" placeholder="Name" required />
       <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required rows="5"></textarea>
+      <textarea name="message" placeholder="Message" required></textarea>
       <button type="submit" class="neon">Send Message</button>
       <div id="form-status"></div>
     </form>
   </section>
-  
   <!-- Footer -->
   <footer>
     <div class="socials">
-      <a href="https://mail.google.com/mail/?view=cm&to=fayiadli@gmail.com" target="_blank" title="Send Email via Gmail">
-        <i data-lucide="mail"></i>
-      </a>
-      <a href="https://github.com/your-github" target="_blank" title="GitHub Profile">
-        <i data-lucide="github"></i>
-      </a>
-      <a href="https://linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn Profile">
-        <i data-lucide="linkedin"></i>
-      </a>
-      <a href="https://instagram.com/your-instagram" target="_blank" title="Instagram Profile">
-        <i data-lucide="instagram"></i>
-      </a>
+      <a href="mailto:fayiadli382@gmails.com"><i data-lucide="mail"></i></a>
+      <a href="https://github.com/Lingxzz7" target="_blank"><i data-lucide="github"></i></a>
+      <a href="https://www.linkedin.com/in/fayi-adli-nugroho-a9b62a31a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="https://www.instagram.com/lingxzz7?igsh=MW45N2N4MXhub2g0Zw==" target="_blank"><i data-lucide="instagram"></i></a>
     </div>
     <div>
-      &copy; <span id="year"></span> Fayi. Made with <span style="color:#ec4899;">&#10084;</span> in Jakarta.
+      &copy; <span id="year"></span> Fayi. Made <span style="color:#ec4899;"></span> in Jakarta.
     </div>
   </footer>
-  
   <script>
     // Lucide icons
     lucide.createIcons();
@@ -678,7 +403,6 @@
         document.getElementById('typed-text').textContent = fullText;
       }
     }
-    
     window.onload = function() {
       typeWriter();
       renderProjects();
@@ -688,14 +412,12 @@
     // Particles
     function createParticles() {
       const container = document.querySelector('.particles');
-      const particleCount = window.innerWidth < 768 ? 25 : 50; // Fewer particles on mobile
-      
-      for (let j = 0; j < particleCount; j++) {
+      for (let j = 0; j < 50; j++) {
         const dot = document.createElement('div');
         dot.className = 'particle';
         dot.style.position = 'absolute';
-        dot.style.width = '6px';
-        dot.style.height = '6px';
+        dot.style.width = '8px';
+        dot.style.height = '8px';
         dot.style.borderRadius = '50%';
         dot.style.background = ['#06b6d4', '#a21caf', '#ec4899', '#22d3ee'][Math.floor(Math.random()*4)];
         dot.style.left = Math.random()*100 + '%';
@@ -708,7 +430,6 @@
         container.appendChild(dot);
       }
     }
-    
     // Pulse animation
     const style = document.createElement('style');
     style.innerHTML = `@keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.5);} 100%{transform:scale(1);} }`;
@@ -718,9 +439,9 @@
     const projects = [
       {
         id: 1,
-        title: "Kopi Project",
+        title: "KOPIKUY Project",
         description: "Website project tentang kopi dengan desain modern dan clean.",
-        image: "public/picture/project-kopi.png",
+        image: "/project-kopi.png",
         type: "image",
         technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
         category: "Web Development"
@@ -736,62 +457,43 @@
       },
       {
         id: 3,
-        title: "Network Configuration Tool",
+        title: "KOPIKUY Video Project",
         description: "KOPIKUY website background video",
-        video: "public/background.mp4",
+        video: "/kopikuy.mp4",
         type: "video",
         technologies: [],
         category: "Web Development"
       }
     ];
-    
     let currentGallery = 0;
     let currentGalleryImages = [];
-    
     function renderProjects(filter = 'All') {
       const container = document.querySelector('.project-list');
       container.innerHTML = '';
       const filtered = filter === 'All' ? projects : projects.filter(p => p.category === filter);
-      
       filtered.forEach(project => {
         const card = document.createElement('div');
         card.className = 'project-card';
         let mediaHtml = '';
-        
         if (project.type === 'image' && project.image) {
-          mediaHtml = `<img src="${project.image}" alt="${project.title}" loading="lazy">`;
+          mediaHtml = `<img src="${project.image}" alt="${project.title}" style="width:100%;border-radius:1em;margin-bottom:1em;object-fit:cover;max-height:180px;">`;
         } else if (project.type === 'video' && project.video) {
-          mediaHtml = `<video src="${project.video}" autoplay loop muted playsinline loading="lazy"></video>`;
+          mediaHtml = `<video src="${project.video}" autoplay loop muted playsinline preload="auto" style="width:100%;border-radius:1em;margin-bottom:1em;object-fit:cover;max-height:180px;"></video>`;
         }
-        
-        let techHtml = '';
-        if (project.technologies && project.technologies.length > 0) {
-          techHtml = `<div class="tech">${project.technologies.map(t => `<span>${t}</span>`).join('')}</div>`;
-        }
-        
-        let actionHtml = '';
-        if (project.type === 'live' && project.link) {
-          actionHtml = `<a href="${project.link}" target="_blank" class="neon">View Live</a>`;
-        }
-        
         card.innerHTML = `
           ${mediaHtml}
           <h3>${project.title}</h3>
           <p>${project.description}</p>
-          ${techHtml}
-          ${actionHtml}
+          ${project.type === 'live' ? `<a href="${project.link}" target="_blank" class="neon">View Live</a>` : ''}
         `;
-        
         container.appendChild(card);
       });
     }
-    
     window.filterProjects = function(filter) {
       document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
       renderProjects(filter);
     };
-    
     // Lightbox logic
     window.openLightbox = function(idx, pid) {
       const project = projects.find(p => p.id === pid);
@@ -801,23 +503,19 @@
       document.getElementById('lightbox-img').src = currentGalleryImages[currentGallery];
       document.getElementById('lightbox').classList.remove('hidden');
     };
-    
     window.closeLightbox = function() {
       document.getElementById('lightbox').classList.add('hidden');
     };
-    
     window.prevImage = function() {
       if (!currentGalleryImages.length) return;
       currentGallery = (currentGallery - 1 + currentGalleryImages.length) % currentGalleryImages.length;
       document.getElementById('lightbox-img').src = currentGalleryImages[currentGallery];
     };
-    
     window.nextImage = function() {
       if (!currentGalleryImages.length) return;
       currentGallery = (currentGallery + 1) % currentGalleryImages.length;
       document.getElementById('lightbox-img').src = currentGalleryImages[currentGallery];
     };
-    
     // Contact form
     window.submitForm = function(event) {
       event.preventDefault();
@@ -827,19 +525,6 @@
       }, 1500);
       return false;
     };
-    
-    // Mobile-specific optimizations
-    if ('ontouchstart' in window) {
-      // Touch device optimizations
-      document.addEventListener('touchstart', function() {}, {passive: true});
-    }
-    
-    // Handle orientation change
-    window.addEventListener('orientationchange', function() {
-      setTimeout(function() {
-        window.scrollTo(0, 0);
-      }, 100);
-    });
   </script>
 </body>
 </html>
