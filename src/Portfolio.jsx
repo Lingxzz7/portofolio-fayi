@@ -23,14 +23,6 @@ const Portfolio = () => {
   const fullText = "Hi, I'm Fayi";
   const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
 
-  // Gallery images for Project 1
-  const galleryImages = [
-    '/picture/project1-1.jpg',
-    '/picture/project1-2.jpg', 
-    '/picture/project1-3.jpg',
-    '/picture/project1-4.jpg'
-  ];
-
   // Mock GitHub stats
   const mockGithubStats = {
     totalRepos: 12,
@@ -103,11 +95,11 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Interactive Gallery Project",
-      description: "Modern image gallery dengan lightbox effect dan smooth animations",
-      images: galleryImages,
-      type: "gallery",
-      technologies: ["HTML", "CSS", "JavaScript", "Lightbox"],
+      title: "Kopi Project",
+      description: "Website project tentang kopi dengan desain modern dan clean.",
+      image: "/project-kopi.png",
+      type: "image",
+      technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
       category: "Web Development"
     },
     {
@@ -121,10 +113,11 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "Network Configuration Tool",
-      description: "Tool untuk konfigurasi jaringan komputer dengan interface yang user-friendly",
-      type: "concept",
-      technologies: ["Python", "Tkinter", "Networking"],
+      title: "KOPIKUY Video Project",
+      description: "KOPIKUY website background video",
+      video: "/kopikuy.mp4",
+      type: "video",
+      technologies: [],
       category: "Web Development"
     }
   ];
@@ -233,11 +226,11 @@ const Portfolio = () => {
   };
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % galleryImages.length);
+    setCurrentImage((prev) => (prev + 1) % projects.length);
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    setCurrentImage((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
   return (
@@ -502,6 +495,26 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full rounded-xl mb-4 object-cover max-h-56"
+                      style={{ maxHeight: 220 }}
+                    />
+                  )}
+                  {project.video && (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      controls
+                      className="w-full rounded-xl mb-4 object-cover max-h-56"
+                      style={{ maxHeight: 220 }}
+                    />
+                  )}
                   {project.type === 'gallery' ? (
                     <button
                       onClick={() => openLightbox(0)}
@@ -697,8 +710,8 @@ const Portfolio = () => {
             <ChevronLeft className="w-8 h-8" />
           </button>
           <img
-            src={galleryImages[currentImage]}
-            alt={`Gallery ${currentImage + 1}`}
+            src={projects[currentImage].image}
+            alt={projects[currentImage].title}
             className="max-w-2xl max-h-[80vh] rounded-2xl shadow-2xl border-4 border-cyan-500/30"
           />
           <button
