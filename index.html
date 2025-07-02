@@ -436,35 +436,35 @@
     document.head.appendChild(style);
 
     // Project Data
-    const projects = [
-      {
-        id: 1,
-        title: "KOPIKUY Project",
-        description: "Website project tentang kopi dengan desain modern dan clean.",
-        image: "/project-kopi.png",
-        type: "image",
-        technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
-        category: "Web Development"
-      },
-      {
-        id: 2,
-        title: "Portfolio Almeira",
-        description: "Modern portfolio website dengan design yang clean dan responsive",
-        link: "https://lingxzz7.github.io/portofolio-almeira/",
-        type: "live",
-        technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-        category: "Portfolio"
-      },
-      {
-        id: 3,
-        title: "KOPIKUY Video Project",
-        description: "KOPIKUY website background video",
-        video: "/kopikuy.mp4",
-        type: "video",
-        technologies: [],
-        category: "Web Development"
-      }
-    ];
+   const projects = [
+  {
+    id: 1,
+    title: "KOPIKUY Project",
+    description: "Website project tentang kopi dengan desain modern dan clean.",
+    image: "public/project-kopi.png", // ← ubah dari "/project-kopi.png"
+    type: "image",
+    technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    category: "Web Development"
+  },
+  {
+    id: 2,
+    title: "Portfolio Almeira",
+    description: "Modern portfolio website dengan design yang clean dan responsive",
+    link: "https://lingxzz7.github.io/portofolio-almeira/",
+    type: "live",
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    category: "Portfolio"
+  },
+  {
+    id: 3,
+    title: "KOPIKUY Video Project",
+    description: "KOPIKUY website background video",
+    video: "public/kopikuy.mp4", // ← ubah dari "/kopikuy.mp4"
+    type: "video",
+    technologies: [],
+    category: "Web Development"
+  }
+];
     let currentGallery = 0;
     let currentGalleryImages = [];
     function renderProjects(filter = 'All') {
